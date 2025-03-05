@@ -1,0 +1,36 @@
+<!-- 3. Шаблон (src/main/resources/templates/index.html) -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список задач</title>
+</head>
+<body>
+    <h1>Мои задачи</h1>
+    
+    <!-- Форма добавления новой задачи -->
+    <form th:action="@{/add}" method="post">
+        <input type="text" th:field="*{newTask.description}" placeholder="Новая задача">
+        <button type="submit">Добавить</button>
+    </form>
+
+    <!-- Список задач -->
+    <ul>
+        <li th:each="task : ${tasks}">
+            <form th:action="@{/toggle/{id}(id=${task.id})}" method="post">
+                <input type="checkbox" 
+                       th:checked="${task.completed}" 
+                       onchange="this.form.submit()">
+                <span th:class="${task.completed} ? 'completed' : ''" 
+                      th:text="${task.description}"></span>
+            </form>
+        </li>
+    </ul>
+
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</body>
+</html>

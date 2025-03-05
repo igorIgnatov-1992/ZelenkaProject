@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Зелёнка</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+               <img src="images/ZvezdaLogo.png" alt="Логотип">
+                <h1>ЗЕЛЁНКА</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/task">Задачи</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="features" id="about">
+        <div class="feature-card">
+           
+            <h3>До конца контракта:</h3>
+            <p><span th:text="${contractEndString}"></span></p>
+            <h3>Календарных:</h3>
+            <p><span th:text="${calendar}"></span></p>
+            <h3>Льготных:</h3>
+            <p><span th:text="${yearsString}"></span>
+                <span th:text="${remainiString}"></span></p>
+        </div>
+        <!-- <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Календарных</h3>
+            <p><span th:text="${calendar}"></span></p>
+        </div>
+        
+        <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Льготных</h3>
+            <p><span th:text="${yearsString}"></span>
+                <span th:text="${remainiString}"></span></p>
+        </div> -->
+    </section>
+    <div>
+
+    </div>
+
+</body>
+</html>
